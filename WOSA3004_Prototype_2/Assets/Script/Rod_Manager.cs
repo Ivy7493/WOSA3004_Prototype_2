@@ -17,6 +17,7 @@ public class Rod_Manager : MonoBehaviour
     {
         GM = GameObject.FindGameObjectWithTag("Game_Manager").GetComponent<Game_Manager>();
         Path = GetComponent<LineRenderer>();
+        
         StartX = transform.position.x;
     }
 
@@ -25,6 +26,7 @@ public class Rod_Manager : MonoBehaviour
         Debug.Log("Got Snippered");
         HookActive = false;
         transform.position = new Vector3(StartX, StopHeight, 0f);
+        Path.SetPosition(0, new Vector3(StartX, StopHeight, 0f));
         if (IsHooked == true)
         {
             Destroy(Hooked);
@@ -39,14 +41,16 @@ public class Rod_Manager : MonoBehaviour
         {
             Vector3 pos;
             pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
             if (pos.y > StopHeight)
             {
                 pos.y = StopHeight;
             }
             pos = new Vector3(StartX, pos.y, 0f);
-
+            Path.SetPosition(0, pos);
             transform.position = pos;
-
+          
+            
         }
 
 
@@ -58,7 +62,11 @@ public class Rod_Manager : MonoBehaviour
     {
         if(IsHooked == true)
         {
-            Hooked.transform.position = transform.position;
+            if(Hooked != null)
+            {
+                Hooked.transform.position = transform.position;
+            }
+           
             if(transform.position.y >= StopHeight && Input.GetMouseButton(0))
             {
                 //Put code to do score here
@@ -85,9 +93,12 @@ public class Rod_Manager : MonoBehaviour
             Debug.Log("Hit something");
             HookActive = false;
             transform.position = new Vector3(StartX, StopHeight, 0f);
-            if(IsHooked == true)
+            Path.SetPosition(0, new Vector3(StartX, StopHeight, 0f));
+            if (IsHooked == true)
             {
+             
                 Destroy(Hooked);
+
             }
             GM.MinusLife();
             
@@ -102,7 +113,8 @@ public class Rod_Manager : MonoBehaviour
            
         }else if (collision.gameObject.tag == "Life")
         {
-
+            GM.LifePickUp();
+            Destroy(collision.gameObject);
         }
     }
 

@@ -37,8 +37,8 @@ public class Spawner : MonoBehaviour
         if(counter >= GCD)
         {
             counter = 0;
-            float select = Random.Range(0, 101);
-            if(select <= 10 && GM.ReturnLife() < 3)
+            float select = Random.Range(0, 11);
+            if(select <= 1 && GM.ReturnLife() < 3)
             {
                 SpawnHealth();
             }
