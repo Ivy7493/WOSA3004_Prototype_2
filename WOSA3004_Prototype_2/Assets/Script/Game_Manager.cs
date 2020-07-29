@@ -26,6 +26,11 @@ public class Game_Manager : MonoBehaviour
         UIM.UpdateLife(Life);
     }
 
+    public float ReturnScore()
+    {
+        return Score;
+    }
+
     public void IncreaseScore(float _amount)
     {
         Score += _amount;
@@ -33,6 +38,7 @@ public class Game_Manager : MonoBehaviour
         if(Score >= SnipThreshold)
         {
             SnipperEnable = true;
+            UIM.PushNote("Watch out for scissors! They will cut your line!");
         }
     }
 

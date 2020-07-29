@@ -13,6 +13,20 @@ public class Snipper_AI : MonoBehaviour
         Line = GameObject.FindGameObjectWithTag("Hook");
     }
 
+
+    public void SetDirection(string _message)
+    {
+        switch (_message)
+        {
+            case "LEFT":
+                transform.Rotate(new Vector3(0f, 0f, 180));
+                break;
+            case "RIGHT":
+              
+                break;
+        }
+    }
+
     void Encounter()
     {
         if(Snipped == false)

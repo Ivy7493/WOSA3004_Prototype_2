@@ -23,12 +23,18 @@ public class Spawner : MonoBehaviour
         int Select = Random.Range(0, Objects.Length);
         GameObject CurrentSpawn = Instantiate(Objects[Select], transform.position, Quaternion.identity);
         CurrentSpawn.GetComponent<Movement_Motor>().SetDirection(Direction);
+        if (CurrentSpawn.GetComponent<Fish_Manager>() != null)
+        {
+            CurrentSpawn.GetComponent<Fish_Manager>().SetDirection(Direction);
+        }
     }
 
     void SpawnHealth()
     {
         GameObject CurrentSpawn = Instantiate(Health, transform.position, Quaternion.identity);
         CurrentSpawn.GetComponent<Movement_Motor>().SetDirection(Direction);
+        
+       
     }
 
     void NextSpawn()

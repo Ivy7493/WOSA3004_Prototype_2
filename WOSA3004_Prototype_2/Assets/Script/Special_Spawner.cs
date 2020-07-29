@@ -19,9 +19,10 @@ public class Special_Spawner : MonoBehaviour
 
     void Spawn()
     {
-        GCD = Random.Range(5, 9f);
+        GCD = Random.Range(15f, 25f);
         GameObject CurrentSpawn = Instantiate(Enemy, transform.position, Quaternion.identity);
         CurrentSpawn.GetComponent<Movement_Motor>().SetDirection(Direction);
+        CurrentSpawn.GetComponent<Snipper_AI>().SetDirection(Direction);
     }
 
     void NextSpawn()

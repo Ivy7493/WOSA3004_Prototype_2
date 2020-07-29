@@ -1,12 +1,15 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Background_Manager
+    - Fish_Manager
     - Game_Manager
     - Movement_Motor
     - Rod_Manager
     - Snipper_AI
     - Spawner
     - Special_Spawner
+    - Trash_Manager
     - UI_Manager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -55,8 +58,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
-    - Class: 58
-      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 81
@@ -64,29 +65,35 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11168}
+      Script: {instanceID: 11170}
     - Class: 114
-      Script: {instanceID: 11456}
+      Script: {instanceID: 11246}
     - Class: 114
-      Script: {instanceID: 12172}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 13630}
+      Script: {instanceID: 11528}
     - Class: 114
-      Script: {instanceID: 14240}
+      Script: {instanceID: 11776}
     - Class: 114
-      Script: {instanceID: 18468}
+      Script: {instanceID: 12108}
     - Class: 114
-      Script: {instanceID: 19816}
+      Script: {instanceID: 12182}
     - Class: 114
-      Script: {instanceID: 19828}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 24786}
+      Script: {instanceID: 13372}
     - Class: 114
-      Script: {instanceID: 24794}
+      Script: {instanceID: 13646}
     - Class: 114
-      Script: {instanceID: 31696}
+      Script: {instanceID: 14256}
     - Class: 114
-      Script: {instanceID: 32324}
+      Script: {instanceID: 14268}
+    - Class: 114
+      Script: {instanceID: 15286}
+    - Class: 114
+      Script: {instanceID: 17952}
+    - Class: 114
+      Script: {instanceID: 19708}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -132,6 +139,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 8bb6da7243f410edfd3c37e16b8545d7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_Manager
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -188,6 +201,12 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
+      Hash: 18983b55f2a87fee1a599fae9ab162b4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Spawner
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -240,6 +259,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: ddff8b696a94c7afaf0d555385b9ad4c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Snipper_AI
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -302,6 +327,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 8a19baa9f0a98f5ce97f70d1ce3e4586
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Movement_Motor
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -324,6 +355,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
     className: SpriteShape
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Line_Manager
   - hash:
       serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
@@ -366,6 +403,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
+  - hash:
+      serializedVersion: 2
+      Hash: b3a2208c4cc2606813a0e3d5ff748e24
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Game_Manager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -462,6 +505,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 0413ebca4a15a68de6f8383c5f73afe6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Special_Spawner
   - hash:
       serializedVersion: 2
       Hash: 8001a5f7502aab37e42206da015e6914
@@ -566,6 +615,12 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
+      Hash: d2edf2b54cda8f02ff596a57e5579493
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Rod_Manager
+  - hash:
+      serializedVersion: 2
       Hash: aa88ae22474df55295327e4ee99e5a24
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -596,46 +651,22 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: d2edf2b54cda8f02ff596a57e5579493
+      Hash: 48d966702e946ed095f2c721feef8785
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Rod_Manager
+    className: Background_Manager
   - hash:
       serializedVersion: 2
-      Hash: 18983b55f2a87fee1a599fae9ab162b4
+      Hash: 04d9e5a2b3033d320bf2a5c3db7a1d98
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Spawner
+    className: Trash_Manager
   - hash:
       serializedVersion: 2
-      Hash: 8a19baa9f0a98f5ce97f70d1ce3e4586
+      Hash: c8d967cef5a6f801548be9665916a1ec
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Movement_Motor
-  - hash:
-      serializedVersion: 2
-      Hash: b3a2208c4cc2606813a0e3d5ff748e24
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Game_Manager
-  - hash:
-      serializedVersion: 2
-      Hash: 8bb6da7243f410edfd3c37e16b8545d7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UI_Manager
-  - hash:
-      serializedVersion: 2
-      Hash: 0413ebca4a15a68de6f8383c5f73afe6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Special_Spawner
-  - hash:
-      serializedVersion: 2
-      Hash: ddff8b696a94c7afaf0d555385b9ad4c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Snipper_AI
+    className: Fish_Manager
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
