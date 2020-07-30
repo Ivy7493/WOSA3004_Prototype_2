@@ -12,9 +12,11 @@ public class Game_Manager : MonoBehaviour
     bool GameOver = false;
     public float SnipThreshold;
     bool SnipperEnable = false;
+    Sound_Manager SM;
     void Start()
     {
         UIM = GameObject.FindGameObjectWithTag("UI_Manager").GetComponent<UI_Manager>();
+        SM = GameObject.FindGameObjectWithTag("Sound_Manager").GetComponent<Sound_Manager>();
         UIM.UpdateLife(Life);
         UIM.UpdateScore(0f);
        
@@ -35,10 +37,16 @@ public class Game_Manager : MonoBehaviour
     {
         Score += _amount;
         UIM.UpdateScore(Score);
+        SM.PlaySeal();
         if(Score >= SnipThreshold)
         {
+            if(SnipperEnable == false)
+            {
+                UIM.PushNote("Watch out for scissors! They will cut your line!");
+            }
             SnipperEnable = true;
-            UIM.PushNote("Watch out for scissors! They will cut your line!");
+            
+           
         }
     }
 

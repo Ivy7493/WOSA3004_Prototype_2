@@ -13,10 +13,12 @@ public class Rod_Manager : MonoBehaviour
     GameObject Hooked;
     bool IsHooked = false;
     Game_Manager GM;
+    Sound_Manager SM;
     public int score_increment;
     void Start()
     {
         GM = GameObject.FindGameObjectWithTag("Game_Manager").GetComponent<Game_Manager>();
+        SM = GameObject.FindGameObjectWithTag("Sound_Manager").GetComponent<Sound_Manager>();
         Path = GetComponent<LineRenderer>();
         
         StartX = transform.position.x;
@@ -33,6 +35,7 @@ public class Rod_Manager : MonoBehaviour
             Destroy(Hooked);
         }
         GM.MinusLife();
+        SM.PlaySnip();
     }
 
 
@@ -102,6 +105,7 @@ public class Rod_Manager : MonoBehaviour
 
             }
             GM.MinusLife();
+            SM.PlayFish();
             
         }else if(collision.gameObject.tag == "Trash")
         {
@@ -111,11 +115,13 @@ public class Rod_Manager : MonoBehaviour
                 Hooked = collision.gameObject;
                 Hooked.GetComponent<Movement_Motor>().SetHooked();
             }
+            SM.PlayTrash();
            
         }else if (collision.gameObject.tag == "Life")
         {
             GM.LifePickUp();
             Destroy(collision.gameObject);
+            SM.PlayLifeGain();
         }
     }
 
